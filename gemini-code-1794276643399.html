@@ -44,6 +44,12 @@
   </script>
 
   <style>
+    /* PERBAIKAN LINK SCROLL: Membuat lompatan antar seksi menjadi halus */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 70px; /* Offset agar judul tidak tertutup menu navigasi */
+    }
+
     :root {
       --color-bg-primary: #0A0C0E;
       --color-bg-secondary: #101317;
@@ -242,6 +248,167 @@
         <p class="text-[11px] uppercase tracking-[0.15em] text-[var(--color-amber)] font-medium">KEINDAHAN & RAGAM BUDAYA</p>
         <p class="text-[11px] uppercase tracking-[0.15em] text-[var(--color-muted)] font-medium">ARCHIPELAGO CULTURAL ENCYCLOPEDIA</p>
       </div>
+
+      <div class="absolute bottom-8 left-6 md:left-12 z-30">
+        <p class="text-[11px] uppercase tracking-[0.15em] text-[var(--color-muted)] font-medium">ENSIKLOPEDIA INTERAKTIF</p>
+      </div>
+
+      <div class="absolute bottom-8 right-6 md:right-12 z-30">
+        <p class="text-[11px] uppercase tracking-[0.15em] text-[var(--color-secondary)] font-medium">GULIR UNTUK MENJELAJAH ↓</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TWO: STATEMENT FOLD -->
+  <section id="statement" class="min-h-screen relative py-32 px-6 md:px-12 flex flex-col justify-center border-t border-hairline overflow-hidden">
+    <div class="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      
+      <div class="md:col-span-8 space-y-6">
+        <div class="flex items-center space-x-3">
+          <span class="text-xs font-body uppercase tracking-[0.15em] text-[var(--color-amber)]">01 / MANIFESTO BUDAYA</span>
+          <div class="h-[1px] w-12 bg-hairline"></div>
+        </div>
+
+        <h2 class="font-display text-[clamp(1.8rem,3.4vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.2] text-[var(--color-text)] max-w-[24ch]">
+          MERAWAT TRADISI LELUHUR DENGAN ELEGANSI MODERN, MENAMPILKAN <span class="text-[var(--color-amber)]">KEINDAHAN WARISAN INDONESIA</span> KE MATA DUNIA.
+        </h2>
+
+        <p class="text-sm md:text-base text-[var(--color-secondary)] max-w-xl leading-relaxed">
+          Dari tarian mistis ribuan pulau hingga megahnya arsitektur candi bersejarah, Indonesia menyimpan ribuan keunikan budaya yang tak lekang oleh waktu.
+        </p>
+      </div>
+
+      <!-- Oversized Outlined Index & Rotating Circular Image -->
+      <div class="md:col-span-4 relative flex justify-center items-center">
+        <span class="font-display text-[14rem] font-extrabold leading-none text-transparent select-none opacity-20" style="-webkit-text-stroke: 1.5px var(--color-text);">
+          01
+        </span>
+        
+        <div id="floating-circle" class="absolute w-48 h-48 rounded-full overflow-hidden border border-hairline opacity-40 mix-blend-luminosity">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Wayang & Budaya Bali" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION THREE: GALERI WARISAN / THROWABLE DECK -->
+  <section id="releases" class="py-32 px-6 md:px-12 border-t border-hairline bg-bgSecondary">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <span class="text-xs font-body uppercase tracking-[0.15em] text-[var(--color-teal)]">GALERI INTERAKTIF</span>
+          <h2 class="font-display text-4xl md:text-5xl font-extrabold tracking-[-0.02em] text-[var(--color-text)] mt-2">
+            KARTU WARISAN NUSANTARA
+          </h2>
+        </div>
+
+        <p class="text-sm text-[var(--color-secondary)] leading-relaxed">
+          Setiap kartu mewakili salah satu keunikan kebudayaan Indonesia. Geser atau lempar kartu untuk melihat ikon budaya selanjutnya.
+        </p>
+
+        <div class="pt-4 flex items-center space-x-4">
+          <!-- LINKS KE GAME & PHOTOBOOTH YANG SUDAH DIPERBAIKI -->
+          <a href="#kuliner-game" class="px-6 py-3 bg-[var(--color-text)] text-[var(--color-bg-primary)] text-xs font-body uppercase tracking-[0.15em] font-semibold hover:bg-[var(--color-amber)] transition-colors">
+            Main Game Kuliner
+          </a>
+          <a href="#nusantara-photobooth" class="px-6 py-3 border border-hairline text-[var(--color-text)] text-xs font-body uppercase tracking-[0.15em] font-semibold hover:border-[var(--color-amber)] hover:text-[var(--color-amber)] transition-colors">
+            Buka Photobooth
+          </a>
+        </div>
+
+        <div class="pt-6 border-t border-hairline flex items-center justify-between text-xs text-[var(--color-muted)]">
+          <span>GUNAKAN TOMBOL PANAH / SERET MOUSE</span>
+          <span id="deck-counter" class="text-[var(--color-amber)] font-mono">1 / 4</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Sleeve Deck -->
+      <div class="lg:col-span-7 flex justify-center items-center">
+        <div id="deck" class="deck-container relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px]" tabindex="0" aria-label="Galeri Warisan Nusantara">
+          
+          <!-- Card 4 -->
+          <div class="deck-card absolute inset-0 bg-[#161A1E] border border-hairline rounded-sm p-4 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform" style="transform: translate(12px, 12px) rotate(4deg) scale(0.92); z-index: 1;">
+            <div class="w-full h-[75%] bg-zinc-900 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80" alt="Candi Borobudur" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <p class="text-xs font-display font-bold text-[var(--color-text)]">IDN-004 // CANDI BOROBUDUR</p>
+                <p class="text-[11px] text-[var(--color-secondary)]">Situs Bersejarah & Monumen Buddha</p>
+              </div>
+              <span class="text-[10px] text-[var(--color-amber)] font-mono">JAWA TENGAH</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="deck-card absolute inset-0 bg-[#161A1E] border border-hairline rounded-sm p-4 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform" style="transform: translate(-8px, 8px) rotate(-3deg) scale(0.95); z-index: 2;">
+            <div class="w-full h-[75%] bg-zinc-900 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Tarian Kecak Bali" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <p class="text-xs font-display font-bold text-[var(--color-text)]">IDN-003 // TARI KECAK</p>
+                <p class="text-[11px] text-[var(--color-secondary)]">Tarian Dramatik Ritual Sakral</p>
+              </div>
+              <span class="text-[10px] text-[var(--color-amber)] font-mono">BALI</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="deck-card absolute inset-0 bg-[#161A1E] border border-hairline rounded-sm p-4 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform" style="transform: translate(6px, -4px) rotate(2deg) scale(0.98); z-index: 3;">
+            <div class="w-full h-[75%] bg-zinc-900 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=800&q=80" alt="Rumah Gadang Minangkabau" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <p class="text-xs font-display font-bold text-[var(--color-text)]">IDN-002 // RUMAH GADANG</p>
+                <p class="text-[11px] text-[var(--color-secondary)]">Arsitektur Tradisional Minangkabau</p>
+              </div>
+              <span class="text-[10px] text-[var(--color-amber)] font-mono">SUMATERA BARAT</span>
+            </div>
+          </div>
+
+          <!-- Card 1 (Top) -->
+          <div class="deck-card absolute inset-0 bg-[#161A1E] border border-hairline rounded-sm p-4 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform" style="transform: translate(0px, 0px) rotate(0deg) scale(1); z-index: 4;">
+            <div class="w-full h-[75%] bg-zinc-900 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Batik & Pakaian Adat Nusantara" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <p class="text-xs font-display font-bold text-[var(--color-text)]">IDN-001 // BATIK NUSANTARA</p>
+                <p class="text-[11px] text-[var(--color-secondary)]">Warisan Takbenda UNESCO</p>
+              </div>
+              <span class="text-[10px] text-[var(--color-amber)] font-mono">INDONESIA</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION FOUR: SENI TRADISI & TARIAN -->
+  <section id="roster" class="py-32 px-6 md:px-12 border-t border-hairline">
+    <div class="max-w-5xl mx-auto space-y-12">
+      <div class="flex justify-between items-end pb-4 border-b border-hairline">
+        <span class="text-xs font-body uppercase tracking-[0.15em] text-[var(--color-muted)]">SENI PERTUNJUKAN & TARIAN</span>
+        <span class="text-xs font-body uppercase tracking-[0.15em] text-[var(--color-muted)]">ASAL DAERAH</span>
+      </div>
+
+      <div class="divide-y divide-hairline">
+        <div class="py-8 flex justify-between items-center group cursor-pointer hover:bg-bgSecondary/50 px-4 transition-colors">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.15em] text-[var(--color-amber)]">TARIAN RITUAL & KEHARMONISAN GERAK</span>
+            <h3 class="font-display text-2xl md:text-4xl font-bold text-[var(--color-text)] group-hover:translate-x-2 transition-transform">TARI SAMAN</h3>
+          </div>
+          <span class="text-xs font-mono text-[var(--color-secondary)]">ACEH</span>
+        </div>
+
+        <div class="py-8 flex justify-between items-cente </div>
 
       <div class="absolute bottom-8 left-6 md:left-12 z-30">
         <p class="text-[11px] uppercase tracking-[0.15em] text-[var(--color-muted)] font-medium">ENSIKLOPEDIA INTERAKTIF</p>
