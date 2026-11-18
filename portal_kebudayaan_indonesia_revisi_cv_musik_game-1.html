@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F7E9D2">
+<title>INDONESIA — Portal Kebudayaan & Warisan Nusantara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:wght@700;900&family=Sora:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#FFF8EC;--panel:#FCE8D2;--text:#253746;--secondary:#526879;--muted:#657887;--amber:#C45B36;--teal:#247C78;--line:rgba(37,55,70,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--bg);color:var(--text);font-family:Sora,sans-serif;overflow-x:hidden}.display{font-family:Syne,sans-serif}.editorial{font-family:"Playfair Display",serif}.line{border-color:var(--line)}.muted{color:var(--secondary)}.accent{color:var(--amber)}.section{padding:110px max(24px,calc((100vw - 1160px)/2));border-top:1px solid var(--line)}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;transition:.2s}.btn:hover{border-color:var(--amber);color:var(--amber)}.btn.primary{background:var(--text);color:var(--bg)}.btn.primary:hover{background:var(--amber);color:var(--bg)}.card{background:#151a1e;border:1px solid var(--line);padding:18px}.navlink{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary);white-space:nowrap}.navlink:hover{color:var(--amber)}.hero{height:100svh;min-height:620px;position:relative;display:grid;place-items:center;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,14,.78),rgba(10,12,14,.22),rgba(10,12,14,.78)),url("https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=2000&q=85") center/cover;transform:scale(1.03)}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 10%,rgba(10,12,14,.72) 100%)}.hero-content{position:relative;z-index:2;text-align:center;padding:20px}.hero-title{font:800 clamp(3.4rem,13vw,10rem)/.9 Syne,sans-serif;letter-spacing:-.07em}.hero-sub{letter-spacing:.24em;font-size:11px;color:var(--amber);margin-top:26px}.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.heritage-card img{width:100%;height:190px;object-fit:cover;display:block;margin-bottom:16px}.heritage-card{transition:transform .25s}.heritage-card:hover{transform:translateY(-5px)}.deck{position:relative;width:min(360px,80vw);height:min(390px,90vw);perspective:900px}.deck-card{position:absolute;inset:0;transition:transform .35s,opacity .35s;cursor:grab}.deck-card img{width:100%;height:75%;object-fit:cover}.deck-card:active{cursor:grabbing}.game-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:540px}.food-card{aspect-ratio:1/1;border:1px solid var(--line);background:#182026;border-radius:10px;font-size:clamp(24px,5vw,42px);display:grid;place-items:center;cursor:pointer;transition:.2s}.food-card:hover{border-color:var(--amber)}.food-card .face{display:none}.food-card.open .back,.food-card.done .back{display:none}.food-card.open .face,.food-card.done .face{display:block}.food-card.done{opacity:.5;cursor:default}.photo-frame{background:#f5efdf;color:#202020;padding:14px;max-width:520px}.photo-frame video,.photo-frame img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#222}.music-panel{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:center;background:#12171b;border:1px solid var(--line);padding:22px}.music-panel iframe{width:100%;aspect-ratio:16/9;border:0}.footer{padding:35px 24px;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line)}button:disabled{opacity:.4;cursor:not-allowed}
+/* Palet warna cerah Nusantara */
+body{background:var(--bg);color:var(--text)}
+header{background:rgba(255,248,236,.94)!important;border-color:var(--line)!important;color:var(--text)}
+.card{background:#FFFDF8;border-color:rgba(37,55,70,.16);box-shadow:0 10px 28px rgba(94,69,43,.07)}
+.section:nth-of-type(even){background:#FCE8D2!important}
+.section:nth-of-type(odd){background:#FFF8EC!important}
+.hero:before{background:linear-gradient(90deg,rgba(26,77,79,.48),rgba(26,77,79,.12),rgba(196,91,54,.32)),url("https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=2000&q=85") center/cover;}
+.hero:after{background:linear-gradient(135deg,rgba(36,124,120,.22),rgba(244,177,89,.15))}
+.hero-title{color:#FFF8EC;text-shadow:0 4px 22px rgba(15,54,55,.35)}
+.hero-sub{color:#FFE1A8}
+.btn{border-color:rgba(37,55,70,.25);color:var(--text);border-radius:999px}
+.btn.primary{background:#247C78;color:white;border-color:#247C78}
+.btn.primary:hover{background:#C45B36;color:white}
+.accent{color:#B84F2E}
+.eyebrow{color:#B84F2E}
+.food-card{background:#FFE8C9;color:#24434A;border:2px solid #E5A65D}
+.food-card.done{background:#D8EFE2}
+.photo-frame{background:#FFFDF8;color:#253746;border:8px solid #E6A85D;outline:3px solid #247C78;outline-offset:-13px;border-radius:18px;box-shadow:0 12px 30px rgba(74,58,37,.14);padding:22px;position:relative}
+.photo-frame:before,.photo-frame:after{content:'✿ ✦ ✿';position:absolute;color:#C45B36;font-size:19px;letter-spacing:7px;top:5px}
+.photo-frame:before{left:12px}.photo-frame:after{right:12px}
+.photo-frame video{border:4px solid #247C78;border-radius:10px;transform:none!important}
+.strip-frame{max-width:360px;margin-top:18px;background:#FFFDF8;border:8px solid #E6A85D;border-radius:18px;padding:18px 14px 14px;box-shadow:0 12px 30px rgba(74,58,37,.14);position:relative}
+.strip-frame:before{content:'✿  NUSANTARA  ✿';display:block;text-align:center;color:#B84F2E;font:700 13px Sora,sans-serif;letter-spacing:3px;margin:0 0 12px}
+.strip-frame img{width:100%;display:block;border:4px solid white;box-shadow:0 2px 8px #0002}
+.music-panel{background:#DCEFE8!important;border:1px solid #A6D1C4!important;border-radius:20px;color:#253746}
+#cvModal>div{background:#FFFDF8!important;color:#253746}
+#cvModal>div>div:first-child{background:#FFFDF8!important}
+@media(max-width:850px){.section{padding:82px 22px}}
+@media(max-width:850px){.desktop-nav{display:none}.mobile-nav{display:flex}.section{padding:82px 22px}.music-panel{grid-template-columns:1fr}.hero{min-height:560px}}
+@media(min-width:851px){.mobile-nav{display:none}}
+</style>
+</head>
+<body>
+<header class="fixed top-0 inset-x-0 z-50 h-[62px] px-5 md:px-10 flex items-center justify-between border-b backdrop-blur-xl" style="background:rgba(10,12,14,.88);border-color:var(--line)">
+<a href="#hero" class="display font-extrabold tracking-tight">INDONESIA<span class="accent">.</span></a>
+<nav class="desktop-nav items-center gap-5">
+<a class="navlink" href="#statement">Visi Budaya</a><a class="navlink" href="#releases">Galeri Warisan</a><a class="navlink" href="#roster">Seni Tradisi</a><a class="navlink" href="#schedule">Situs Bersejarah</a><a class="navlink" href="#tim-cv">Tim & CV</a><a class="navlink" href="#kuliner-game">Game Kuliner</a><a class="navlink accent" href="#nusantara-photobooth">Photobooth</a>
+</nav>
+<a class="btn" href="#nusantara-photobooth">Foto Gratis</a>
+</header>
+
+<main>
+<section id="hero" class="hero">
+<div class="hero-content">
+<p class="eyebrow mb-5">Warisan Nusantara · Ensiklopedia Interaktif</p>
+<h1 class="hero-title">INDO<br><span class="accent">NESIA.</span></h1>
+<p class="hero-sub">KEINDAHAN · KEBERAGAMAN · KEBUDAYAAN</p>
+<p class="muted text-xs mt-10 tracking-widest">GULIR UNTUK MENJELAJAH ↓</p>
+</div>
+</section>
+
+<section id="statement" class="section">
+<div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 items-center">
+<div class="md:col-span-8">
+<p class="eyebrow mb-5">01 / Manifesto Budaya</p>
+<h2 class="display text-3xl md:text-5xl font-extrabold leading-tight">MERAWAT TRADISI LELUHUR DENGAN ELEGANSI MODERN, MENAMPILKAN <span class="accent">KEINDAHAN WARISAN INDONESIA</span> KE MATA DUNIA.</h2>
+<p class="muted leading-8 mt-6 max-w-2xl">Dari tarian tradisional hingga megahnya arsitektur candi bersejarah, Indonesia menyimpan keunikan budaya yang diwariskan lintas generasi.</p>
+</div>
+<div class="md:col-span-4 text-center"><div class="editorial text-[150px] opacity-20">01</div><p class="font-hand text-3xl accent -mt-10">Bhinneka Tunggal Ika</p></div>
+</div>
+</section>
+
+<section id="releases" class="section" style="background:var(--panel)">
+<div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div><p class="eyebrow">02 / Galeri Interaktif</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3">KARTU WARISAN NUSANTARA</h2>
+<p class="muted leading-8 mt-6">Gunakan tombol panah atau geser kartu untuk menjelajahi ikon budaya Indonesia.</p>
+<div class="flex gap-3 mt-7"><button class="btn primary" id="prevCard">← Sebelumnya</button><button class="btn" id="nextCard">Selanjutnya →</button></div>
+<p class="accent text-xs mt-5" id="deckCounter">01 / 04</p></div>
+<div class="flex justify-center"><div class="deck" id="deck">
+<article class="deck-card card"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Batik"><h3 class="display font-bold mt-3">BATIK NUSANTARA</h3><p class="muted text-xs mt-1">Warisan budaya takbenda · Indonesia</p></article>
+<article class="deck-card card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rumah_Gadang.jpg?width=1200" alt="Rumah Gadang"><h3 class="display font-bold mt-3">RUMAH GADANG</h3><p class="muted text-xs mt-1">Arsitektur tradisional · Sumatera Barat</p></article>
+<article class="deck-card card"><img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Budaya Bali"><h3 class="display font-bold mt-3">SENI TARI BALI</h3><p class="muted text-xs mt-1">Seni pertunjukan · Bali</p></article>
+<article class="deck-card card"><img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80" alt="Candi"><h3 class="display font-bold mt-3">CANDI BOROBUDUR</h3><p class="muted text-xs mt-1">Situs bersejarah · Jawa Tengah</p></article>
+</div></div></div>
+</section>
+
+<section id="roster" class="section">
+<div class="max-w-5xl mx-auto"><p class="eyebrow">03 / Seni Pertunjukan</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3 mb-10">SENI TRADISI & TARIAN</h2>
+<div class="divide-y" style="border-color:var(--line)">
+<div class="py-7 flex justify-between gap-4"><div><p class="eyebrow">Tarian ritual dan keharmonisan gerak</p><h3 class="display text-3xl font-bold mt-2">TARI SAMAN</h3><p class="muted text-sm mt-2">Tarian berkelompok dengan gerakan kompak dan syair yang berasal dari Aceh.</p></div><span class="accent text-xs">ACEH</span></div>
+<div class="py-7 flex justify-between gap-4"><div><p class="eyebrow">Tarian penyambutan</p><h3 class="display text-3xl font-bold mt-2">TARI PENDET</h3><p class="muted text-sm mt-2">Tarian tradisional Bali yang dikenal dengan gerak anggun dan penggunaan properti bokor.</p></div><span class="accent text-xs">BALI</span></div>
+<div class="py-7 flex justify-between gap-4"><div><p class="eyebrow">Seni pertunjukan rakyat</p><h3 class="display text-3xl font-bold mt-2">TARI JAIPONG</h3><p class="muted text-sm mt-2">Kesenian tari yang berkembang di Jawa Barat dengan irama dinamis.</p></div><span class="accent text-xs">JAWA BARAT</span></div>
+<div class="py-7 flex justify-between gap-4"><div><p class="eyebrow">Tari tradisional Minangkabau</p><h3 class="display text-3xl font-bold mt-2">TARI PIRING</h3><p class="muted text-sm mt-2">Tarian yang menggunakan piring sebagai properti utama pertunjukan.</p></div><span class="accent text-xs">SUMATERA BARAT</span></div>
+</div></div>
+</section>
+
+<section id="schedule" class="section" style="background:var(--panel)">
+<div class="max-w-6xl mx-auto"><p class="eyebrow">04 / Jejak Sejarah</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3 mb-10">SITUS BERSEJARAH INDONESIA</h2>
+<div class="grid-auto">
+<article class="heritage-card card"><img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=900&q=80" alt="Borobudur"><p class="eyebrow">Magelang · Jawa Tengah</p><h3 class="display text-2xl font-bold mt-2">Candi Borobudur</h3><p class="muted text-sm leading-7 mt-3">Kompleks candi Buddha yang menjadi salah satu mahakarya arsitektur bersejarah Indonesia.</p></article>
+<article class="heritage-card card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prambanan_Temple,_Yogyakarta.jpg?width=1200" alt="Prambanan"><p class="eyebrow">Sleman · DI Yogyakarta</p><h3 class="display text-2xl font-bold mt-2">Candi Prambanan</h3><p class="muted text-sm leading-7 mt-3">Kompleks candi Hindu dengan bangunan menjulang dan relief kisah Ramayana.</p></article>
+<article class="heritage-card card"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80" alt="Pura Bali"><p class="eyebrow">Bali</p><h3 class="display text-2xl font-bold mt-2">Warisan Arsitektur Bali</h3><p class="muted text-sm leading-7 mt-3">Pura dan tata ruang tradisional yang memperlihatkan hubungan budaya, alam, dan spiritualitas.</p></article>
+</div></div>
+</section>
+
+<section id="tim-cv" class="section">
+<div class="max-w-6xl mx-auto">
+<p class="eyebrow">05 / Di Balik Proyek</p>
+<h2 class="display text-4xl md:text-5xl font-extrabold mt-3">TIM & CURRICULUM VITAE</h2>
+<p class="muted mt-5 leading-7 max-w-2xl">Kenali tiga anggota tim dan pengalaman masing-masing. Tekan tombol “Lihat CV” untuk membuka informasi lebih lengkap.</p>
+<div class="grid-auto mt-10">
+<article class="card">
+<div class="text-5xl accent">MS</div><h3 class="display text-2xl font-bold mt-5">Monica Sentosa</h3>
+<p class="eyebrow mt-2">Siswa SMA · Komunikasi, Organisasi & Kreativitas</p>
+<p class="muted text-sm mt-4">Memiliki pengalaman dalam kepanitiaan acara, kegiatan sekolah, dan organisasi siswa.</p>
+<button class="btn mt-5 cv-open" data-cv="monica">Lihat CV</button>
+</article>
+<article class="card">
+<div class="text-5xl accent">FE</div><h3 class="display text-2xl font-bold mt-5">Felisha Ester Limawan</h3>
+<p class="eyebrow mt-2">Siswa SMA · OSIS & Kreativitas</p>
+<p class="muted text-sm mt-4">Aktif dalam organisasi, pengelolaan acara, media sosial, dan kegiatan sekolah.</p>
+<button class="btn mt-5 cv-open" data-cv="felisha">Lihat CV</button>
+</article>
+<article class="card">
+<div class="text-5xl accent">BM</div><h3 class="display text-2xl font-bold mt-5">Bernice Michelle W</h3>
+<p class="eyebrow mt-2">Siswa SMA · Sains, Organisasi & Desain</p>
+<p class="muted text-sm mt-4">Memiliki pengalaman kepemimpinan di MPK dan OSIS serta minat pada sains dan teknologi pangan.</p>
+<button class="btn mt-5 cv-open" data-cv="bernice">Lihat CV</button>
+</article>
+</div>
+</div>
+<div id="cvModal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4" style="background:rgba(0,0,0,.82)" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+<div class="card w-full max-w-3xl max-h-[85vh] overflow-y-auto" style="background:#151a1e">
+<div class="flex items-start justify-between gap-4 sticky top-0 py-3" style="background:#151a1e">
+<div><p class="eyebrow">Curriculum Vitae</p><h3 id="cvModalTitle" class="display text-2xl md:text-3xl font-bold mt-1"></h3></div>
+<button id="closeCv" class="btn" aria-label="Tutup CV">Tutup ✕</button>
+</div>
+<div id="cvModalBody" class="muted text-sm leading-7"></div>
+</div></div>
+</section>
+
+<section id="kuliner-game" class="section" style="background:var(--panel)">
+<div class="max-w-5xl mx-auto text-center"><p class="eyebrow">06 / Mini Game</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3">TEBAK & COCOKKAN KULINER</h2>
+<p class="muted mt-4">Buka dua kartu dan temukan pasangan kuliner Nusantara yang sama.</p>
+<div class="flex justify-center items-center flex-wrap gap-5 mt-7 text-sm"><span>Waktu: <b id="stopwatch" class="accent">00:00</b></span><span>Langkah: <b id="moves" class="accent">0</b></span><span>Pasangan: <b id="pairs" class="accent">0/6</b></span><button id="restartGame" class="btn">Ulangi Game</button></div>
+<div id="gameGrid" class="game-grid mx-auto mt-8" aria-label="Permainan mencocokkan kuliner"></div>
+<p id="gameMessage" class="accent mt-5 text-sm" aria-live="polite">Ayo temukan semua pasangan!</p>
+</div>
+</section>
+
+<section id="nusantara-photobooth" class="section">
+<div class="max-w-5xl mx-auto"><p class="eyebrow">07 / Photobooth Nusantara</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3">ABADIKAN MOMENMU</h2>
+<p class="muted mt-4 leading-7">Izinkan akses kamera, lalu ambil tiga foto untuk membuat satu photo strip bergaya photobooth. Fitur kamera membutuhkan izin browser dan biasanya harus dibuka melalui HTTPS atau localhost.</p>
+<div class="grid md:grid-cols-2 gap-8 mt-9 items-start">
+<div class="photo-frame"><video id="camera" autoplay playsinline muted></video><div class="text-center editorial text-2xl mt-3">Nusantara Photobooth</div><p class="text-center text-xs mt-1">KENANGAN DARI INDONESIA</p></div>
+<div><div class="flex flex-wrap gap-3"><button id="startCamera" class="btn primary">Aktifkan Kamera</button><button id="takePhoto" class="btn" disabled>Ambil Foto (1/3)</button><button id="stopCamera" class="btn" disabled>Matikan Kamera</button></div>
+<p id="cameraStatus" class="muted text-xs mt-4" aria-live="polite">Kamera belum diaktifkan.</p>
+<div class="strip-frame" id="resultFrame" hidden><img id="photoResult" alt="Photo strip berisi tiga foto"><p class="text-center editorial text-lg mt-3">My Nusantara Moment</p><p class="text-center text-xs mt-1">INDONESIA · KENANGAN KITA</p></div><button id="resetPhotos" class="btn mt-4" type="button" hidden>Ambil Ulang 3 Foto</button>
+<a id="downloadPhoto" class="btn primary mt-4" download="foto-nusantara.png" hidden>Download Foto</a>
+<canvas id="photoCanvas" hidden></canvas>
+</div></div></div>
+</section>
+
+<section id="music" class="section" style="background:var(--panel)">
+<div class="max-w-5xl mx-auto">
+<p class="eyebrow">08 / Teman Menjelajah</p><h2 class="display text-4xl md:text-5xl font-extrabold mt-3">ALUNAN DARI BANDUNG</h2>
+<div class="music-panel mt-8">
+<div>
+<p class="accent text-xs tracking-widest">YURA YUNITA</p><h3 class="editorial text-4xl mt-2">Bandung</h3>
+<p class="muted text-sm mt-3 leading-7">Pemutar lagu “Bandung” disematkan langsung di halaman ini melalui Spotify, bukan diarahkan ke halaman YouTube.</p>
+<p class="muted text-xs mt-3">Catatan: website akan mencoba memulai pemutaran saat dibuka, tetapi browser dan Spotify dapat memblokir autoplay bersuara. Jika belum mulai, tekan tombol Play pada pemutar.</p>
+</div>
+<div>
+<iframe id="bandungPlayer" style="border-radius:12px" src="https://open.spotify.com/embed/track/7itshdCnfN3pbP88rQYHIr?utm_source=generator&theme=0&autoplay=1" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="eager" title="Bandung — Yura Yunita"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">INDONESIA. — Portal Kebudayaan & Warisan Nusantara<br><span class="mt-2 inline-block">Merawat warisan, mengenalkan keberagaman.</span></footer>
+
+<script>
+/* Navigasi: semua tautan mengarah ke section yang tersedia. */
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    const target=document.querySelector(link.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+/* Galeri kartu: tombol dan swipe/drag */
+const deckCards=[...document.querySelectorAll('.deck-card')];
+let deckIndex=0;
+function renderDeck(){
+  deckCards.forEach((card,i)=>{
+    const offset=(i-deckIndex+deckCards.length)%deckCards.length;
+    card.style.zIndex=deckCards.length-offset;
+    card.style.opacity=offset>2?0:1;
+    card.style.transform=`translate(${offset*5}px,${offset*7}px) rotate(${offset*3-2}deg) scale(${1-offset*.045})`;
+    card.style.pointerEvents=offset===0?'auto':'none';
+  });
+  document.getElementById('deckCounter').textContent=String(deckIndex+1).padStart(2,'0')+' / '+String(deckCards.length).padStart(2,'0');
+}
+document.getElementById('nextCard').addEventListener('click',()=>{deckIndex=(deckIndex+1)%deckCards.length;renderDeck()});
+document.getElementById('prevCard').addEventListener('click',()=>{deckIndex=(deckIndex-1+deckCards.length)%deckCards.length;renderDeck()});
+let touchStart=0;
+document.getElementById('deck').addEventListener('touchstart',e=>touchStart=e.changedTouches[0].screenX,{passive:true});
+document.getElementById('deck').addEventListener('touchend',e=>{let dx=e.changedTouches[0].screenX-touchStart;if(Math.abs(dx)>45){deckIndex=(deckIndex+(dx<0?1:-1)+deckCards.length)%deckCards.length;renderDeck()}},{passive:true});
+renderDeck();
+
+/* Game memory kuliner */
+const foods=[
+  {icon:'🍛',name:'Rendang'},
+  {icon:'🍚',name:'Nasi goreng'},
+  {icon:'🍢',name:'Sate'},
+  {icon:'🥟',name:'Pempek'},
+  {icon:'🍲',name:'Gudeg'},
+  {icon:'🍡',name:'Klepon'}
+];
+let first=null,lock=false,moves=0,pairs=0,gameStartedAt=null,stopwatchInterval=null;
+const gameGrid=document.getElementById('gameGrid');
+const stopwatchEl=document.getElementById('stopwatch');
+function formatTime(seconds){const m=Math.floor(seconds/60).toString().padStart(2,'0');const sec=(seconds%60).toString().padStart(2,'0');return `${m}:${sec}`;}
+function updateStopwatch(){if(gameStartedAt!==null)stopwatchEl.textContent=formatTime(Math.floor((Date.now()-gameStartedAt)/1000));}
+function startGame(){
+  if(stopwatchInterval)clearInterval(stopwatchInterval);
+  gameStartedAt=null;stopwatchEl.textContent='00:00';stopwatchInterval=null;
+  first=null;lock=false;moves=0;pairs=0;
+  document.getElementById('moves').textContent='0';
+  document.getElementById('pairs').textContent='0/6';
+  document.getElementById('gameMessage').textContent='Ayo temukan semua pasangan!';
+  const deck=[...foods,...foods].sort(()=>Math.random()-.5);
+  gameGrid.innerHTML='';
+  deck.forEach((food,index)=>{
+    const btn=document.createElement('button');
+    btn.className='food-card';btn.type='button';btn.setAttribute('aria-label','Kartu tertutup');
+    btn.innerHTML=`<span class="back">✦</span><span class="face" title="${food.name}">${food.icon}<small style="display:block;font:600 10px Sora,sans-serif;margin-top:5px">${food.name}</small></span>`;
+    btn.addEventListener('click',()=>flipCard(btn,food.name));
+    gameGrid.appendChild(btn);
+  });
+}
+function flipCard(btn,food){
+  if(lock||btn.classList.contains('open')||btn.classList.contains('done'))return;
+  if(gameStartedAt===null){gameStartedAt=Date.now();stopwatchInterval=setInterval(updateStopwatch,250);}
+  btn.classList.add('open');btn.setAttribute('aria-label',food);
+  if(!first){first={btn,food};return}
+  moves++;document.getElementById('moves').textContent=moves;
+  if(first.food===food){
+    first.btn.classList.add('done');btn.classList.add('done');first=null;pairs++;
+    document.getElementById('pairs').textContent=pairs+'/6';
+    if(pairs===6){if(stopwatchInterval)clearInterval(stopwatchInterval);updateStopwatch();document.getElementById('gameMessage').textContent=`Hebat! Semua pasangan ditemukan dalam ${moves} langkah dan waktu ${stopwatchEl.textContent}.`;}
+  }else{
+    lock=true;const previous=first;first=null;
+    setTimeout(()=>{previous.btn.classList.remove('open');btn.classList.remove('open');previous.btn.setAttribute('aria-label','Kartu tertutup');btn.setAttribute('aria-label','Kartu tertutup');lock=false},850);
+  }
+}
+document.getElementById('restartGame').addEventListener('click',startGame);
+startGame();
+
+/* Photobooth: tiga jepretan digabung menjadi satu strip; hasil tidak di-mirror. */
+let cameraStream=null;
+let capturedPhotos=[];
+const video=document.getElementById('camera');
+const startBtn=document.getElementById('startCamera');
+const takeBtn=document.getElementById('takePhoto');
+const stopBtn=document.getElementById('stopCamera');
+const statusText=document.getElementById('cameraStatus');
+const resetPhotosBtn=document.getElementById('resetPhotos');
+function stopCamera(){
+  if(cameraStream){cameraStream.getTracks().forEach(track=>track.stop());cameraStream=null;}
+  video.srcObject=null;takeBtn.disabled=true;stopBtn.disabled=true;
+  statusText.textContent='Kamera dimatikan.';
+}
+startBtn.addEventListener('click',async()=>{
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){
+    statusText.textContent='Browser tidak mendukung kamera. Buka halaman melalui HTTPS atau localhost.';return;
+  }
+  try{
+    cameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});
+    video.srcObject=cameraStream;await video.play();
+    takeBtn.disabled=false;stopBtn.disabled=false;
+    statusText.textContent='Kamera aktif. Ambil tiga foto; setiap tekan tombol akan menambah satu foto ke strip.';
+  }catch(err){
+    statusText.textContent=err.name==='NotAllowedError'?'Izin kamera ditolak. Izinkan akses kamera dari pengaturan browser.':'Kamera tidak dapat dibuka. Pastikan kamera tersedia dan halaman menggunakan HTTPS.';
+  }
+});
+stopBtn.addEventListener('click',stopCamera);
+function buildPhotoStrip(){
+  const sourceImages=capturedPhotos.map(src=>{const im=new Image();im.src=src;return im;});
+  const w=900,h=675,gap=24,pad=34,header=90,footer=90;
+  const out=document.createElement('canvas');out.width=w;out.height=pad*2+header+(h*3)+(gap*2)+footer;
+  const ctx=out.getContext('2d');
+  ctx.fillStyle='#fff8ec';ctx.fillRect(0,0,out.width,out.height);
+  ctx.strokeStyle='#d99a4c';ctx.lineWidth=18;ctx.strokeRect(10,10,out.width-20,out.height-20);
+  ctx.strokeStyle='#247c78';ctx.lineWidth=5;ctx.strokeRect(27,27,out.width-54,out.height-54);
+  ctx.fillStyle='#b84f2e';ctx.textAlign='center';ctx.font='bold 38px Georgia';ctx.fillText('✿  NUSANTARA MOMENT  ✿',w/2,pad+48);
+  sourceImages.forEach((im,i)=>{
+    const y=pad+header+i*(h+gap);
+    ctx.fillStyle='#ffffff';ctx.fillRect(44,y-8,w-88,h+16);
+    const scale=Math.max((w-104)/im.width,h/im.height),dw=im.width*scale,dh=im.height*scale;
+    const sx=(dw-(w-104))/2,sy=(dh-h)/2;
+    ctx.save();ctx.beginPath();ctx.rect(52,y,w-104,h);ctx.clip();ctx.drawImage(im,-sx+52,-sy+y,dw,dh);ctx.restore();
+    ctx.fillStyle='#247c78';ctx.font='bold 20px Sora, sans-serif';ctx.textAlign='left';ctx.fillText(`FOTO ${i+1}`,58,y+h-18);
+  });
+  ctx.fillStyle='#b84f2e';ctx.textAlign='center';ctx.font='bold 25px Georgia';ctx.fillText('INDONESIA  ·  KENANGAN KITA',w/2,out.height-pad-24);
+  return out.toDataURL('image/png');
+}
+takeBtn.addEventListener('click',()=>{
+  if(!cameraStream||!video.videoWidth||capturedPhotos.length>=3)return;
+  const shot=document.createElement('canvas');shot.width=video.videoWidth;shot.height=video.videoHeight;
+  /* Draw directly from video: no horizontal flip/mirror. */
+  shot.getContext('2d').drawImage(video,0,0,shot.width,shot.height);
+  capturedPhotos.push(shot.toDataURL('image/jpeg',0.92));
+  takeBtn.textContent=`Ambil Foto (${Math.min(capturedPhotos.length+1,3)}/3)`;
+  statusText.textContent=`Foto ${capturedPhotos.length} dari 3 berhasil diambil.`;
+  if(capturedPhotos.length===3){
+    const data=buildPhotoStrip();document.getElementById('photoResult').src=data;
+    document.getElementById('resultFrame').hidden=false;
+    const download=document.getElementById('downloadPhoto');download.href=data;download.hidden=false;
+    download.download='photo-strip-nusantara.png';takeBtn.disabled=true;resetPhotosBtn.hidden=false;
+    statusText.textContent='Selesai! Tiga foto sudah digabung menjadi satu strip. Kamu bisa mengunduhnya.';
+  }
+});
+resetPhotosBtn.addEventListener('click',()=>{
+  capturedPhotos=[];document.getElementById('resultFrame').hidden=true;
+  document.getElementById('downloadPhoto').hidden=true;resetPhotosBtn.hidden=true;
+  if(cameraStream)takeBtn.disabled=false;takeBtn.textContent='Ambil Foto (1/3)';
+  statusText.textContent=cameraStream?'Siap mengambil tiga foto baru.':'Aktifkan kamera untuk mengambil tiga foto baru.';
+});
+window.addEventListener('pagehide',stopCamera);
+
+
+/* Data CV anggota berdasarkan tiga file CV yang diberikan. */
+const cvData={
+monica:{
+title:'Monica Sentosa',
+html:`<h4 class="accent font-bold mt-4">Profil</h4><p>Siswa SMA dengan kemampuan komunikasi, kerja sama, dan organisasi. Berpengalaman dalam proyek sekolah, kepanitiaan acara, dan kegiatan kreatif.</p>
+<h4 class="accent font-bold mt-4">Kontak</h4><p>Telepon: +62-882-1880-7249<br>Email: sentosamonica29@gmail.com<br>Domisili: Taman Kopo Indah, Bandung</p>
+<h4 class="accent font-bold mt-4">Keahlian</h4><p>Critical Thinking · Responsibility · Fast Learner · Adaptability · Problem Solving · Research</p>
+<h4 class="accent font-bold mt-4">Pengalaman</h4><ul class="list-disc pl-5"><li>Panitia Event Committee — Worship Night “FUSED”, GIA Kopo Permai (April–Juli 2026): membantu perencanaan acara, konten media sosial, dan promosi.</li><li>Panitia “Turn Back” Christmas Youth Event, GIA Kopo Permai (2025): membantu koordinasi kegiatan dan persiapan acara.</li><li>Anggota MPK SMP (2022–2023): mengikuti rapat, diskusi, dan mendukung program sekolah.</li></ul>
+<h4 class="accent font-bold mt-4">Pencapaian</h4><ul class="list-disc pl-5"><li>Juara 3 Lomba Industrial Challenge Goes to School 2026 — Universitas Katolik Parahyangan.</li></ul>
+<h4 class="accent font-bold mt-4">Pendidikan</h4><p>SDK BPK Penabur Holis · SMP BPK Penabur Holis · SMA BPK Penabur Holis</p>`
+},
+felisha:{
+title:'Felisha Ester Limawan',
+html:`<h4 class="accent font-bold mt-4">Profil</h4><p>Adaptif, kreatif, dan aktif dalam OSIS. Memiliki minat untuk berkontribusi dalam kegiatan sekolah dan menciptakan lingkungan yang inspiratif.</p>
+<h4 class="accent font-bold mt-4">Kontak</h4><p>Telepon: +62 818-0908-7234<br>Email: felishaester@gmail.com<br>Domisili: Bandung Kulon, Kota Bandung<br>Instagram: @bbrnicee</p>
+<h4 class="accent font-bold mt-4">Pendidikan</h4><p>2024–sekarang — SMA BPK Penabur Holis<br>2021–2024 — SMP BPK Penabur Holis</p>
+<h4 class="accent font-bold mt-4">Keahlian</h4><p>Hard skills: Media sosial, editing video, desain grafis, manajemen acara.<br>Soft skills: Kepemimpinan, kerja sama, berpikir kritis, kreativitas.</p>
+<h4 class="accent font-bold mt-4">Pengalaman</h4><ul class="list-disc pl-5"><li>OSIS HEBRON — Koordinator Seksi 4 (2023/2024): publikasi prestasi siswa melalui Instagram dan pengelolaan Kompetisi Internal PERAK.</li><li>Retrouvailles, Natal ARISE — Registrasi (2024): mengelola pendaftaran peserta.</li><li>Vielo, Paskah Providence — Ketua Acara (2025): merencanakan dan mengoordinasikan kegiatan.</li></ul>
+<h4 class="accent font-bold mt-4">Pencapaian</h4><ul class="list-disc pl-5"><li>Peringkat 2 Kelas 9 Semester 2; Lulusan Terbaik ke-3 (2024).</li><li>Medali Perak, Young Change Maker Summit kategori SMA (2025).</li></ul>`
+},
+bernice:{
+title:'Bernice Michelle W',
+html:`<h4 class="accent font-bold mt-4">Profil</h4><p>Siswa SMA yang aktif dalam organisasi dan akademik, dengan minat pada sains, khususnya biologi dan teknologi pangan. Memiliki pengalaman kepemimpinan, penelitian, dan kerja tim.</p>
+<h4 class="accent font-bold mt-4">Kontak</h4><p>Instagram: @bbrnicee<br>Telepon: +62 811 222 6816<br>Email: bernicemichelle1125@gmail.com<br>Alamat: TKI 5 Sommerville 2 No.9</p>
+<h4 class="accent font-bold mt-4">Pendidikan</h4><p>SDK BPK Penabur Holis · SMPK BPK Penabur Holis · SMAK BPK Penabur Holis</p>
+<h4 class="accent font-bold mt-4">Keahlian</h4><p>Social Media Management · Design (Canva) · Event Documentation</p>
+<h4 class="accent font-bold mt-4">Pengalaman</h4><ul class="list-disc pl-5"><li>Pengurus Gereja Remaja, Sekretaris — Gereja Isa Almasih Taman Kopo Permai (2023–2027).</li><li>Pengurus MPK kelas 7, Sekretaris — SMP BPK Penabur Holis (2021–2022).</li><li>Pengurus MPK kelas 8, Ketua MPK — SMP BPK Penabur Holis (2022–2023).</li><li>Pengurus MPK kelas 9, Sekretaris — SMP BPK Penabur Holis (2023–2024).</li><li>Pengurus OSIS kelas 10, Anggota Seksi 10 — SMA BPK Penabur Holis (2024–2025).</li><li>Pengurus OSIS kelas 11, Ketua Seksi 10 — SMA BPK Penabur Holis (2025–2026).</li></ul>
+<h4 class="accent font-bold mt-4">Pencapaian</h4><ul class="list-disc pl-5"><li>Bronze Medal Bebras Competition.</li><li>Lulusan Terbaik ke-6 SMP BPK Penabur Holis.</li><li>Bronze Medal International Kangaroo Mathematics Contest.</li></ul>`
+}
+};
+const cvModal=document.getElementById('cvModal');
+document.querySelectorAll('.cv-open').forEach(button=>button.addEventListener('click',()=>{
+ const data=cvData[button.dataset.cv];
+ document.getElementById('cvModalTitle').textContent=data.title;
+ document.getElementById('cvModalBody').innerHTML=data.html;
+ cvModal.classList.remove('hidden');cvModal.classList.add('flex');
+}));
+function closeCv(){cvModal.classList.add('hidden');cvModal.classList.remove('flex')}
+document.getElementById('closeCv').addEventListener('click',closeCv);
+cvModal.addEventListener('click',e=>{if(e.target===cvModal)closeCv()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCv()});
+
+/* Animasi ringan; konten tetap tampil jika GSAP gagal dimuat. */
+if(window.gsap&&window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('section:not(.hero) .eyebrow').forEach(el=>{
+    gsap.from(el,{y:18,opacity:0,duration:.7,scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+}
+</script>
+</body>
+</html>
